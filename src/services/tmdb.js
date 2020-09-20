@@ -29,7 +29,7 @@ export default {
       //retornará um array com objeto de cada categoria
       {
         slug: "originals",
-        title: "Originais da Netflix",
+        title: "Originais do Netflix",
         items: await basicFetch(
           `/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`
         ),
