@@ -1,8 +1,13 @@
-import React from 'react';
+import * as React from "react";
+import List from "./components/List";
 
 function App() {
   return (
-  <p>sado</p>
+    <div className="page">
+      <section className="lists">
+        <List />
+      </section>
+    </div>
   );
 }
 

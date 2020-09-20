@@ -1,0 +1,36 @@
+.movieRow {
+  margin-bottom: 30px; /*distancia entre cada categoria*/
+}
+
+.movieRow h2 {
+  margin: 0 0 0 30px;
+}
+
+.movieRow--listArea {
+  overflow-x: hidden; /*tudo q passar da tela na vertical será cortado*/
+  padding-left: 30px;
+}
+
+.movieRow--list {
+  width: 99999px;
+}
+
+.movieRow--item {
+  display: inline-block;
+  width: 190px; /*digo q a img tera esse valor*/
+  cursor: pointer;
+}
+
+.movieRow--item img {
+  width: 100%; /*e aq digo q ela ocupará 100% de 150px definido em .movieRow--item*/
+  transform: scale(
+    0.9
+  ); /*porém aq digo que ela ocupará 90%, dando um espaçamento entre as imagens e por fim da animação*/
+}
+
+.movieRow--item img:hover {
+  transform: scale(
+    1
+  ); /*no hover, ela volta a ter 100% de 150px, causaundo a animação*/
+  transition: all ease 0.3s;
+}
