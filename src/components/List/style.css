@@ -12,7 +12,7 @@
 }
 
 .movieRow--list {
-  width: 99999px;
+  transition: all ease 0.4s;
 }
 
 .movieRow--item {
@@ -33,4 +33,34 @@
     1
   ); /*no hover, ela volta a ter 100% de 150px, causaundo a animação*/
   transition: all ease 0.3s;
+}
+
+.movieRow--left,
+.movieRow--right {
+  position: absolute;
+  width: 40px;
+  height: 284px;
+  overflow: hidden;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.movieRow--left {
+  left: 0;
+}
+
+.movieRow--right {
+  right: 0;
+}
+
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right {
+  opacity: 1;
 }

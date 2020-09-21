@@ -9,7 +9,7 @@ import Header from "./components/Header";
 function App() {
   const [movieList, setMovieList] = React.useState([]);
   const [featuredData, setFeaturedData] = React.useState(null);
-  const [blackHeader, setBlackHeader] = React.useState(true);
+  const [blackHeader, setBlackHeader] = React.useState(false);
 
   React.useEffect(() => {
     const loadAll = async () => {
@@ -34,23 +34,22 @@ function App() {
 
   React.useEffect(() => {
     const scrollListener = () => {
-      if(window.scrollY > 20){
+      if (window.scrollY > 20) {
         setBlackHeader(true);
       } else {
         setBlackHeader(false);
       }
-    }
+    };
 
     window.addEventListener("scroll", scrollListener); //ouvindo o scroll
     return () => {
       window.removeEventListener("scroll", scrollListener);
-    }
-
-  }, [])
+    };
+  }, []);
 
   return (
     <div className="page">
-      <Header blackHeader={blackHeader}/>
+      <Header blackHeader={blackHeader} />
 
       {featuredData && <FeaturedMovie item={featuredData} />}
 
@@ -59,6 +58,14 @@ function App() {
           <List key={key} title={item.title} items={item.items} />
         ))}
       </section>
+
+      <footer>
+        Feito com{" "}
+        <span role="img" aria-label="coração">
+        ❤️
+        </span>{" "}
+        por Vitor Rubim
+      </footer>
     </div>
   );
 }

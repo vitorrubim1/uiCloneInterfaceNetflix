@@ -13,6 +13,12 @@ export default ({ item }) => {
     genres.push(item.genres[index].name);
   }
 
+  //limitar a descrição
+  let overview = item.overview;
+  if(overview.length > 200){
+      overview = overview.substring(0, 400)  + '...';
+   }
+
   return (
     <section
       className="featured"
@@ -35,13 +41,22 @@ export default ({ item }) => {
             </div>
           </div>
 
-          <div className="featured--description">{item.overview}</div>
+          <div className="featured--description">
+            {overview ? overview : "Não há descrição a ser mostrada..."}
+          </div>
           <div className="featured--buttons">
-            <a href={`/watch/${item.id}`} className="featured--watchButton"> ► Assistir </a>
-            <a href={`/list/add/${item.id}`} className="featured--myListButton"> + Minha Lista </a>
+            <a href={`/watch/${item.id}`} className="featured--watchButton">
+              {" "}
+              ► Assistir{" "}
+            </a>
+            <a href={`/list/add/${item.id}`} className="featured--myListButton">
+              {" "}
+              + Minha Lista{" "}
+            </a>
           </div>
           <div className="featured-genres">
-            <strong> Genêros: </strong> {genres.join(", ")}{" "} {/*separo cada genero por virgula e espaço*/}
+            <strong> Genêros: </strong> {genres.join(", ")}{" "}
+            {/*separo cada genero por virgula e espaço*/}
           </div>
         </div>
       </div>
