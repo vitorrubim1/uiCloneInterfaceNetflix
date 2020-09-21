@@ -3,7 +3,7 @@
 }
 
 .movieRow h2 {
-  margin: 0 0 0 30px;
+  margin: 0px 0px 0px 30px;
 }
 
 .movieRow--listArea {
@@ -26,13 +26,13 @@
   transform: scale(
     0.9
   ); /*porém aq digo que ela ocupará 90%, dando um espaçamento entre as imagens e por fim da animação*/
+  transition: all ease 0.3s;
 }
 
 .movieRow--item img:hover {
   transform: scale(
     1
   ); /*no hover, ela volta a ter 100% de 150px, causaundo a animação*/
-  transition: all ease 0.3s;
 }
 
 .movieRow--left,
@@ -40,13 +40,13 @@
   position: absolute;
   width: 40px;
   height: 284px;
-  overflow: hidden;
   z-index: 99;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
   background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
   border: none;
   opacity: 0;
   transition: all ease 0.5s;
@@ -63,4 +63,11 @@
 .movieRow:hover .movieRow--left,
 .movieRow:hover .movieRow--right {
   opacity: 1;
+}
+
+@media (max-width: 760px) {
+  .movieRow--left,
+  .movieRow--right {
+    opacity: 1;
+  }
 }
