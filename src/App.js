@@ -4,10 +4,12 @@ import Tmdb from "./services/tmdb";
 
 import List from "./components/List";
 import FeaturedMovie from "./components/FeaturedMovie";
+import Header from "./components/Header";
 
 function App() {
   const [movieList, setMovieList] = React.useState([]);
   const [featuredData, setFeaturedData] = React.useState(null);
+  const [blackHeader, setBlackHeader] = React.useState(true);
 
   React.useEffect(() => {
     const loadAll = async () => {
@@ -30,8 +32,26 @@ function App() {
     loadAll();
   }, []);
 
+  React.useEffect(() => {
+    const scrollListener = () => {
+      if(window.scrollY > 20){
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
+    }
+
+    window.addEventListener("scroll", scrollListener); //ouvindo o scroll
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    }
+
+  }, [])
+
   return (
     <div className="page">
+      <Header blackHeader={blackHeader}/>
+
       {featuredData && <FeaturedMovie item={featuredData} />}
 
       <section className="lists">
