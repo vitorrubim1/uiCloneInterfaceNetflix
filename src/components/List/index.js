@@ -5,7 +5,7 @@ import "./style.css";
 import { NavigateBefore, NavigateNext } from "@material-ui/icons";
 
 export default function List({ title, items, key }) {
-  const [scrollX, setScrollX] = React.useState(-345); //estado q controla o carrosel
+  const [scrollX, setScrollX] = React.useState(0); //estado q controla o carrosel
 
   function handleLeftArrow() {
     let xValue = scrollX + Math.round(window.innerWidth / 2); //Math.round(window.innerWidth / 2): pego a largura da tela e divido por 2
