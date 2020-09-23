@@ -2,7 +2,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Netflix.png" height=100 />
 </h1>
 
-<h1>
+<h1 align="center">
   <img src="src/assets/project.gif">
 </h1>
 
