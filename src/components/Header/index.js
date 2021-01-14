@@ -1,7 +1,8 @@
 import * as React from "react";
 
 import "./style.css";
-import NetflixLogo "../../src/assets/netflixLogo.png";
+// import  "../../src/assets/netflixLogo.png";
+import NetflixLogo from "../../assets/netflixLogo.png"
 
 export default function Header({ blackHeader }) {
   return (
