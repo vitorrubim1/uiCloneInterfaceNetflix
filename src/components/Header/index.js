@@ -1,13 +1,14 @@
 import * as React from "react";
 
 import "./style.css";
+import NetflixLogo "../../src/assets/netflixLogo.png";
 
 export default function Header({ blackHeader }) {
   return (
     <header className={blackHeader ? "black" : ""}>
       <div className="logo">
         <a href="/">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Netflix.png" alt="logo netflix"/>
+          <img src={NetflixLogo} alt="logo netflix"/>
         </a>
       </div>
       <div className="user">
